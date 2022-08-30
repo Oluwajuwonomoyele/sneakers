@@ -25,7 +25,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        'font-kumbh': ['Kumbh Sans', 'sans-serif']
+        'kumbh': ['Kumbh Sans', 'sans-serif']
       }
     },
   },
