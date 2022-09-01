@@ -9,3 +9,15 @@
         @apply font-kumbh text-neutral-very-dark-blue
     }
 }
+
+.slide {
+    opacity: 0;
+    transition: all ease 0.3s;
+    transform: scale(0.9);
+}
+
+.active {
+    opacity: 1;
+    transition: all ease 0.3s;
+    transform: scale(1);
+}
