@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { ThemeProvider } from 'styled-components';
+import { Navbar } from './components/Navbar';
+import Hero from './components/Hero';
 
 function App() {
+  const theme = {
+    colors: {
+      primary: {
+        orange: 'hsl(26, 100%, 55%)',
+        paleOrange: 'hsl(25, 100%, 94%)'
+      },
+      neutral: {
+          veryDarkBlue: 'hsl(220, 13%, 13%)',
+          darkGrayishBlue: 'hsl(219, 9%, 45%)',
+          grayishBlue: 'hsl(220, 14%, 75%)',
+          lightGrayishBlue: 'hsl(223, 64%, 98%)',
+          white: 'hsl(0, 0%, 100%)',
+          black75: 'hsl(0, 0%, 0%)'
+      }
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Navbar />
+      <Hero />
+    </ThemeProvider>
   );
 }
 
