@@ -2,8 +2,18 @@ import './App.css';
 import { ThemeProvider } from 'styled-components';
 import { Navbar } from './components/Navbar';
 import Hero from './components/Hero';
+import Cart from './components/SneakerCart';
+import MobileNav from './components/MobileNav';
+import { useState } from 'react';
 
 function App() {
+  const [openNav, setOpenNav] = useState(false)
+
+  const toggleOpenNav = ():void => {
+    setOpenNav(!openNav)
+  }
+
+
   const theme = {
     colors: {
       primary: {
@@ -23,8 +33,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
+      <MobileNav openNav={openNav} toggleOpenNav={toggleOpenNav}/>
+      <Navbar openNav={openNav} toggleOpenNav={toggleOpenNav} />
       <Hero />
+      <Cart />
     </ThemeProvider>
   );
 }

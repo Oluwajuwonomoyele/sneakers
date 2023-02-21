@@ -31,7 +31,7 @@ export const Logo = styled.img`
     cursor: pointer;
 
 `
-export const Cart = styled.div`
+export const CartToast = styled.div`
     cursor: pointer;
 
 `

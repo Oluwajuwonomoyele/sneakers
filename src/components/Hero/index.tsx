@@ -4,14 +4,14 @@ import prev from '../../images/icon-previous.svg';
 import next from '../../images/icon-next.svg';
 import minus from '../../images/icon-minus.svg';
 import plus from '../../images/icon-plus.svg';
-import cart from '../../images/icon-cart.svg';
+import cart from '../../images/icon-cart2.svg';
 
 const Hero = () => {
   return ( 
     <HeroSection>
       <HeroContainer>
         <Slider>
-          <img src={img1} alt="image-1" />
+          <img src={img1} alt="sneaker-1" />
           <Prev>
             <img src={prev} alt="prev" />
           </Prev>
