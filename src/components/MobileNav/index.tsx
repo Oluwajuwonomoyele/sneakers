@@ -9,9 +9,9 @@ type MobileNavProps = {
 const MobileNav = ({openNav, toggleOpenNav} : MobileNavProps) => {
     return ( 
         <MobileNavSection>
-            <BG></BG>
-            <MobileNavContainer>
-                <Close src={exit} alt='exit' onClick={() => toggleOpenNav}/>
+            <BG openNav={openNav}></BG>
+            <MobileNavContainer openNav={openNav}>
+                <Close src={exit} alt='exit' onClick={() => toggleOpenNav()}/>
 
                 <Links>
                     <p>Collections</p>

@@ -3,9 +3,14 @@ import menu from '../../images/icon-menu.svg';
 import logo from '../../images/logo.svg';
 import cart from '../../images/icon-cart.svg';
 import avatar from '../../images/image-avatar.png';
-import MobileNav from "../MobileNav";
 
-export const Navbar = ({toggleOpenNav} : React.ComponentProps<typeof MobileNav >) => {
+type NavbarProps = {
+  openNav: boolean,
+  toggleOpenNav : () => void,
+  toggleCart : () => void
+}
+
+export const Navbar = ({toggleOpenNav, toggleCart} : NavbarProps) => {
   return (
     <Nav>
       <NavContainer>
@@ -16,7 +21,7 @@ export const Navbar = ({toggleOpenNav} : React.ComponentProps<typeof MobileNav >
           </Left>
 
           <Right>
-            <CartToast>
+            <CartToast onClick={() => toggleCart()}>
               <img src={cart} alt="cart" />
             </CartToast>
 

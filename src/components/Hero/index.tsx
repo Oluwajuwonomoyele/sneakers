@@ -1,24 +1,17 @@
-import { HeroSection, HeroContainer, Slider, HeroContent, Next, Prev, ContentHeader, Counter, Pricing, Price, Span1, Span2, Count, Minus, Plus, CartButton } from './Hero.styles';
-import img1 from '../../images/image-product-1.jpg';
-import prev from '../../images/icon-previous.svg';
-import next from '../../images/icon-next.svg';
+import { HeroSection, HeroContainer, SliderContainer, HeroContent, ContentHeader, Counter, Pricing, Price, Span1, Span2, Count, Minus, Plus, CartButton } from './Hero.styles';
 import minus from '../../images/icon-minus.svg';
 import plus from '../../images/icon-plus.svg';
 import cart from '../../images/icon-cart2.svg';
+import ImageSlider from '../Slider';
 
 const Hero = () => {
   return ( 
     <HeroSection>
       <HeroContainer>
-        <Slider>
-          <img src={img1} alt="sneaker-1" />
-          <Prev>
-            <img src={prev} alt="prev" />
-          </Prev>
-          <Next>
-            <img src={next} alt="next" />
-          </Next>
-        </Slider>
+        <SliderContainer>
+          <ImageSlider />
+        </SliderContainer>
+        
 
         <HeroContent>
           <ContentHeader>SNEAKER COMPANY</ContentHeader>

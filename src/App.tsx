@@ -7,13 +7,18 @@ import MobileNav from './components/MobileNav';
 import { useState } from 'react';
 
 function App() {
-  const [openNav, setOpenNav] = useState(false)
+  const [openNav, setOpenNav] = useState(false);
+  const [ isCartOpen, setIsCartOpen ] = useState(false)
 
   const toggleOpenNav = ():void => {
     setOpenNav(!openNav)
   }
 
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen)
+  }
 
+  console.log(openNav)
   const theme = {
     colors: {
       primary: {
@@ -34,9 +39,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <MobileNav openNav={openNav} toggleOpenNav={toggleOpenNav}/>
-      <Navbar openNav={openNav} toggleOpenNav={toggleOpenNav} />
+      <Navbar openNav={openNav} toggleOpenNav={toggleOpenNav} toggleCart={toggleCart}/>
       <Hero />
-      <Cart />
+      <Cart isCartOpen={isCartOpen} />
     </ThemeProvider>
   );
 }

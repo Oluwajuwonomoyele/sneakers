@@ -1,8 +1,12 @@
 import { CartSection, CartContainer, CartContent, Line } from './Cart.styles'
 
-const Cart = () => {
+type CartProps = {
+    isCartOpen: boolean
+}
+
+const Cart = ({isCartOpen} : CartProps) => {
     return ( 
-        <CartSection>
+        <CartSection isCartOpen={isCartOpen}>
             <CartContainer>
                 <h1>Cart</h1>
                 <Line></Line>
@@ -10,7 +14,6 @@ const Cart = () => {
                 <CartContent>
                     <p>Your cart is empty.</p>
                 </CartContent>
-
             </CartContainer>
         </CartSection>
     );

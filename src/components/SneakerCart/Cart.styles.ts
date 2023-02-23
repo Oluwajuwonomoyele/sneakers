@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const CartSection = styled.section`
+type CartStyles = {
+    isCartOpen: boolean
+}
+
+export const CartSection = styled.section<CartStyles>`
     position: absolute;
-    display: none;
+    display: ${props => props.isCartOpen ? 'block': 'none'};
     width: 95vw;
     min-height: 230px;
     top: 11%;
