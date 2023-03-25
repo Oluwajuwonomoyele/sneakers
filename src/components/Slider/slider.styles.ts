@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 type SliderStyles = {
-    position: ('activeSlide' | 'lastSlide' | 'nextSlide')
+    position: string
 }
 
 export const SliderSection = styled.section`
@@ -9,12 +9,16 @@ export const SliderSection = styled.section`
     height: 35vh;
     display: flex;
     overflow: hidden;
+    transition: all 0.3s ease;
 `
-export const SliderImg = styled.img`
+export const SliderImg = styled.img<SliderStyles>`
     width: 100%;
     height: 100%;
     flex-shrink: 0;
     object-fit: cover;
+    opacity: ${props => props.position === 'activeSlide' ? '1' : 0};
+    transform: ${props => props.position === 'activeSlide' ? 'translateX(0)' : props.position === 'lastSlide' ? 'translateX(-100%)' : props.position === 'nextSlide' ? 'translateX(100%)' : ''};
+    transition: all 0.3s ease;
 `
 
 export const Prev = styled.div`
@@ -31,7 +35,7 @@ export const Prev = styled.div`
     cursor: pointer;
 
     img {
-        transform: scale(0.4);
+        transform: scale(0.7);
     }
 
 `
@@ -51,6 +55,6 @@ export const Next = styled.div`
     cursor: pointer;
 
     img {
-        transform: scale(0.4);
+        transform: scale(0.7);
     }
 `

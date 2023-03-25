@@ -33,7 +33,17 @@ export const Logo = styled.img`
 `
 export const CartToast = styled.div`
     cursor: pointer;
-
+    position: relative;
+`
+export const Toast = styled.div`
+    background-color: ${props => props.theme.colors.primary.orange};
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    top: -20%;
+    right: -23%;
+    padding: 0 7px;
+    border-radius: 40%;
 `
 export const Avatar = styled.div`
     cursor: pointer;

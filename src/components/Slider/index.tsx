@@ -7,7 +7,8 @@ import next from '../../images/icon-next.svg';
 const ImageSlider = () => {
     const [index, setIndex] = useState(0);
     const lastIndex = sliderData.length -1
-    let position = 'nextSlide'
+
+    console.log(index)
 
     useEffect(() => {
         if(index < 0){
@@ -22,21 +23,23 @@ const ImageSlider = () => {
         <SliderSection>
             {sliderData.map((item, indexSlide) => {
                 const { id, imgSrc, alt } = item
+                let position = 'nextSlide'
                 if(indexSlide === index){
                     position = 'activeSlide'
+                    console.log(position)
                 }
                 if(indexSlide === index - 1 || (index === 0 && indexSlide === sliderData.length -1)){
                     position = 'lastSlide'
                 }
 
                 return (
-                    <SliderImg src={imgSrc} alt={alt} key={id} />
+                    <SliderImg src={imgSrc} alt={alt} key={id} position={position} />
                 )
             })}
-            <Prev>
+            <Prev onClick={() => setIndex(index - 1)}>
                 <img src={prev} alt="prev" />
             </Prev>
-            <Next>
+            <Next onClick={() => setIndex(index + 1)}>
                 <img src={next} alt="next" />
             </Next>
         </SliderSection>

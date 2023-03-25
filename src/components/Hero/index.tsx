@@ -3,8 +3,17 @@ import minus from '../../images/icon-minus.svg';
 import plus from '../../images/icon-plus.svg';
 import cart from '../../images/icon-cart2.svg';
 import ImageSlider from '../Slider';
+import { UseCartContext } from '../../hooks/UseCartContext';
 
 const Hero = () => {
+  const {state, dispatch} = UseCartContext()
+
+  const removeItem = () => { 
+    if(state?.itemQuantity !== 0){
+      dispatch({type: 'REMOVE'})
+    }
+  }
+
   return ( 
     <HeroSection>
       <HeroContainer>
@@ -25,12 +34,12 @@ const Hero = () => {
             </Pricing>
 
             <Count>
-              <Minus src={minus} alt='minus' />
-              <span>0</span>
-              <Plus src={plus} alt='plus'/>
+              <Minus src={minus} alt='minus' onClick={() => removeItem()}/>
+              <span>{state?.itemQuantity}</span>
+              <Plus src={plus} alt='plus'  onClick={()=> dispatch({type: 'ADD'})}/>
             </Count>
 
-            <CartButton><img src={cart} alt="cart" />  <p>Add to cart</p></CartButton>
+            <CartButton><img src={cart} alt="cart"/>  <p>Add to cart</p></CartButton>
           </Counter>
         </HeroContent>
       </HeroContainer>

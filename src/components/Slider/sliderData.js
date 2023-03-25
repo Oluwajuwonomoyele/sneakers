@@ -15,12 +15,12 @@ const sliderData =[
         alt: 'shoe-2'
     },
     {
-        id: 2,
+        id: 3,
         imgSrc: shoeThree,
         alt: 'shoe-3'
     },
     {
-        id: 3,
+        id: 4,
         imgSrc: shoeFour,
         alt: 'shoe-4' 
     }

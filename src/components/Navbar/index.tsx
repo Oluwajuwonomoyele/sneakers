@@ -1,4 +1,4 @@
-import { Nav, NavContainer, Left, Menu, Logo, Right, CartToast, Avatar } from "./Navbar.styles";
+import { Nav, NavContainer, Left, Menu, Logo, Right, CartToast, Avatar, Toast } from "./Navbar.styles";
 import menu from '../../images/icon-menu.svg';
 import logo from '../../images/logo.svg';
 import cart from '../../images/icon-cart.svg';
@@ -23,6 +23,7 @@ export const Navbar = ({toggleOpenNav, toggleCart} : NavbarProps) => {
           <Right>
             <CartToast onClick={() => toggleCart()}>
               <img src={cart} alt="cart" />
+              <Toast>3</Toast>
             </CartToast>
 
             <Avatar>

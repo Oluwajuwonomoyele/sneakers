@@ -17,8 +17,6 @@ function App() {
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen)
   }
-
-  console.log(openNav)
   const theme = {
     colors: {
       primary: {
