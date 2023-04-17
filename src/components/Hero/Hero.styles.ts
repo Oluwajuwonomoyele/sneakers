@@ -4,10 +4,62 @@ export const HeroSection = styled.section`
 
 `
 export const HeroContainer = styled.div`
+    max-width: 1300px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 1300px) {
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6rem;
+        padding: 0 5rem;
+    }
+
 `
 export const SliderContainer = styled.div`
+
+@media screen and (min-width: 1300px) {
+       display: none;
+    }
     
 `
+export const ImgContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    @media screen and (max-width: 1299px) {
+        display: none;
+    }
+
+`
+export const DisplayImg = styled.div`
+    width: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+`
+export const Shoes = styled.div`
+    display: flex;
+    gap: 1rem;
+`
+export const Shoe = styled.div`
+    width: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+    }
+`
+
 export const HeroContent = styled.div`
     padding: 1rem;
 
@@ -19,11 +71,25 @@ export const HeroContent = styled.div`
         font-size: 15px;
         line-height: 25px;
     }
+
+    @media screen and (min-width: 1300px) {
+       h1 {
+        font-size: 45px;
+       }
+       p {
+        font-size: 16px;
+        margin: 1rem 0;
+       }
+    }
 `
 export const ContentHeader = styled.div`
     font-size: 14px;
     font-weight: 700;
     color: ${props => props.theme.colors.primary.orange};
+
+    @media screen and (min-width: 1300px) {
+      font-size: 16px;
+    }
 `
 export const Counter = styled.div`
 `
@@ -37,6 +103,15 @@ export const Pricing = styled.div`
         font-weight: 700;
         text-decoration: line-through;
         color: ${props => props.theme.colors.neutral.grayishBlue};
+    }
+
+    @media screen and (min-width: 425px) {
+        margin-top: 0.5rem;
+    }
+
+    @media screen and (min-width: 1300px) {
+       flex-direction: column;
+       align-items: flex-start;
     }
 `
 export const Price = styled.div`
@@ -65,6 +140,18 @@ export const Count = styled.div`
 
     span {
         font-weight: 700;
+    }
+
+    @media screen and (min-width: 425px) {
+        margin-top: 0.5rem;
+    }
+
+    @media screen and (min-width: 1300px) {
+       display: inline-flex;
+       width: 15rem;
+       height: 3.5rem;
+       margin-top: 0;
+       border-radius: 8px;
     }
 `
 export const Minus = styled.img`
@@ -95,5 +182,16 @@ export const CartButton = styled.button`
         color: ${props => props.theme.colors.neutral.white};
     }
 
+    @media screen and (min-width: 425px) {
+        margin-top: 1rem;
+    }
+    @media screen and (min-width: 1300px) {
+       display: inline-flex;
+       width: 19rem;
+       margin-left: 1rem;
+       margin-top: 0;
+       padding: 0;
+       height: 3.5rem;
+    }
 
 `

@@ -9,27 +9,31 @@ type ContextType = {
 export const CartContext = createContext<ContextType | null>(null)
 
 const initState = {
+    name: 'Fall Limited Edition Sneakers',
     itemQuantity: 0,
-    item: {
-        name: 'Fall Limited Edition Sneakers',
-        price: 125,
-        total: 0
-    }
+    addedQuantity: 0,
+    price: 125,
+    totalPrice: 0
 }
 
 type CartState = {
+    name: string,
     itemQuantity: number,
-    item: {
-        name: string,
-        price: number,
-        total: number
-    }
+    addedQuantity: number
+    price: number,
+    totalPrice: number
 }
 
-type CartAction = {
-    type: string,
+type AddToCartAction = {
+    type: 'ADD TO CART' | 'REMOVE FROM CART',
     payload?: number
 }
+
+type OtherActions = {
+    type: 'ADD' | 'REMOVE'
+}
+
+type CartAction = AddToCartAction | OtherActions
 
 export const cartReducer = (state : CartState, action: CartAction) => {
     switch(action.type){
@@ -43,9 +47,14 @@ export const cartReducer = (state : CartState, action: CartAction) => {
                 ...state,
                 itemQuantity: state.itemQuantity - 1
             }
-        case 'ADD TO CART': 
+        // case 'ADD TO CART': 
+        //     return {
+        //         ...state,
+        //         addedQuantity: action.payload
+        //     }
+        case 'REMOVE FROM CART':
             return {
-                ...state,
+                ...state
             }
         default:
             return state

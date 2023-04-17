@@ -1,14 +1,18 @@
-import { CartSection, CartContainer, CartContent, Line, Item, ItemImgDiv, ItemDets, Remove, CheckOut } from './Cart.styles';
+import { CartSection, CartContainer, CartContent, Line, Item, ItemImgDiv, ItemDets, Remove, CheckOut, Empty } from './Cart.styles';
 
 import shoe from '../../images/image-product-1-thumbnail.jpg';
 
 import deleteIcon from '../../images/icon-delete.svg';
+import { UseCartContext } from '../../hooks/UseCartContext';
 
 type CartProps = {
     isCartOpen: boolean
+    isCartEmpty: boolean
 }
 
-const Cart = ({isCartOpen} : CartProps) => {
+const Cart = ({isCartOpen, isCartEmpty} : CartProps) => {
+    const {state, dispatch} = UseCartContext()
+
     return ( 
         <CartSection isCartOpen={isCartOpen}>
             <CartContainer>
@@ -16,7 +20,9 @@ const Cart = ({isCartOpen} : CartProps) => {
                 <Line></Line>
 
                 <CartContent>
-                    <Item>
+                   { isCartEmpty ? <Empty>Your cart is empty</Empty> : 
+                   <>
+                     <Item>
                         <ItemImgDiv>
                             <img src={shoe} alt="shoe" />
                         </ItemImgDiv>
@@ -29,6 +35,7 @@ const Cart = ({isCartOpen} : CartProps) => {
                         </ItemDets>
                     </Item>
                     <CheckOut>Checkout</CheckOut>
+                   </>}
                 </CartContent>
             </CartContainer>
         </CartSection>

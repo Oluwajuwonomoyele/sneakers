@@ -27,8 +27,9 @@ export const CartContainer = styled.div`
 
 export const Line = styled.div`
     width: 100%;
-    height: 2px;
-    background-color: ${props => props.theme.colors.neutral.lightGrayishBlue};
+    height: 1px;
+    background-color: ${props => props.theme.colors.neutral.grayishBlue};
+    opacity: 0.4;
 `
 
 export const CartContent = styled.div`
@@ -36,14 +37,12 @@ export const CartContent = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
-    
-    /* p {
-        font-weight: 700;
-        color: ${props => props.theme.colors.neutral.darkGrayishBlue};
-        text-align: center;
-        margin-top: 4rem;
-    } */
+`
+export const Empty = styled.div`
+    font-weight: 700;
+    color: ${props => props.theme.colors.neutral.darkGrayishBlue};
+    text-align: center;
+    margin: 3rem 0;
 `
 
 export const CheckOut = styled.button`

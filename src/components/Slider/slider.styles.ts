@@ -10,6 +10,18 @@ export const SliderSection = styled.section`
     display: flex;
     overflow: hidden;
     transition: all 0.3s ease;
+
+    @media screen and (min-width: 360px) {
+        height: 41vh; 
+    }
+
+    @media screen and (min-width: 768px) {
+        height: 45vh;
+    }
+
+    @media screen and (min-width: 1300px) {
+        display: none;
+    }
 `
 export const SliderImg = styled.img<SliderStyles>`
     width: 100%;
