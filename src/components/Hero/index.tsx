@@ -41,7 +41,7 @@ const Hero = ({setIsCartEmpty, isCartEmpty} : HeroProps) => {
           </DisplayImg>
 
           <Shoes>
-            <Shoe className='active'>
+            <Shoe>
               <img src={shoeOne} alt="shoe" />
             </Shoe>
             <Shoe>

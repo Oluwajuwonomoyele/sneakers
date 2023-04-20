@@ -56,8 +56,21 @@ export const Shoe = styled.div`
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    vertical-align: middle;
     border: 2px solid transparent;
+    position: relative;
+    z-index: 20;
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        border-radius: 10px;
+        background: transparent;
+        z-index: 100
+    }
 
     img {
         width: 100%;
@@ -66,23 +79,20 @@ export const Shoe = styled.div`
     }
 
     &:hover {
-        opacity: 60%
+        opacity: 60%;
     }
 
     &.active {
         border-color: ${props => props.theme.colors.primary.orange};
+
+        &:hover {
+            opacity: 100%;
+        }
     }
+
     &.active::after {
-        content: '';
-        width: 100%;
-        height: 100%;
-        positiion: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: green;
-        z-index: 100
+        background: white;
+        opacity: 60%;
     }
 `
 
