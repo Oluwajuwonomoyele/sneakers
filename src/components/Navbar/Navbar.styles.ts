@@ -18,7 +18,7 @@ export const NavContainer = styled.section`
     margin: 0 auto;
 
     @media screen and (min-width: 1300px) {
-        padding: 1rem 0rem;
+        padding: 0;
         border-bottom: 1px solid ${props => props.theme.colors.neutral.grayishBlue};
     }
 `
@@ -34,7 +34,7 @@ export const Left = styled.div`
 export const NavLinks = styled.div`
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
 
     @media screen and (max-width: 1299px) {
         display: none;
@@ -44,6 +44,14 @@ export const Link = styled.p`
     font-weight: 500;
     color: ${props => props.theme.colors.neutral.darkGrayishBlue};
     cursor: pointer;
+    transition: color 1s linear;
+    padding: 2rem 0;
+    border-bottom: 3px solid transparent;
+
+    &:hover {
+        color: ${props => props.theme.colors.neutral.veryDarkBlue};
+        border-bottom: 3px solid ${props => props.theme.colors.primary.orange};
+    }
 `
 
 export const Right = styled.div`
@@ -66,15 +74,20 @@ export const Menu = styled.img`
 `
 export const Logo = styled.img`
     cursor: pointer;
-    
-    @media screen and (min-width: 1300px) {
-        
-    }
-
 `
 export const CartToast = styled.div`
     cursor: pointer;
     position: relative;
+
+    svg {
+        fill: #69707D;
+
+        @media screen and (min-width: 1300px) {
+            &:hover {
+                fill: ${props => props.theme.colors.neutral.veryDarkBlue};
+            }   
+        }
+    }
 `
 export const Toast = styled.div`
     background-color: ${props => props.theme.colors.primary.orange};
@@ -88,13 +101,24 @@ export const Toast = styled.div`
 `
 export const Avatar = styled.div`
     cursor: pointer;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: 50%;
+
     img {
-        width: 30px;
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
     }
 
     @media screen and (min-width: 1300px) {
-        img {
-            width: 45px;
-        }
+        width: 45px;
+        height: 45px;
+    }
+  
+    &:hover {
+        border-color: ${props => props.theme.colors.primary.orange};
     }
 `

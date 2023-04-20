@@ -1,4 +1,4 @@
-import { HeroSection, HeroContainer, SliderContainer, HeroContent, ContentHeader, Counter, Pricing, Price, Span1, Span2, Count, Minus, Plus, CartButton, ImgContainer, DisplayImg, Shoes, Shoe } from './Hero.styles';
+import { HeroSection, HeroContainer, SliderContainer, HeroContent, ContentHeader, Counter, Pricing, Price, Span1, Span2, CountandButton, Count, Minus, Plus, CartButton, ImgContainer, DisplayImg, Shoes, Shoe } from './Hero.styles';
 import minus from '../../images/icon-minus.svg';
 import plus from '../../images/icon-plus.svg';
 import cart from '../../images/icon-cart2.svg';
@@ -41,7 +41,7 @@ const Hero = ({setIsCartEmpty, isCartEmpty} : HeroProps) => {
           </DisplayImg>
 
           <Shoes>
-            <Shoe>
+            <Shoe className='active'>
               <img src={shoeOne} alt="shoe" />
             </Shoe>
             <Shoe>
@@ -68,13 +68,15 @@ const Hero = ({setIsCartEmpty, isCartEmpty} : HeroProps) => {
                 <p>$250.00</p>
             </Pricing>
 
-            <Count>
-              <Minus src={minus} alt='minus' onClick={() => removeItem()}/>
-              <span>{state?.itemQuantity}</span>
-              <Plus src={plus} alt='plus'  onClick={()=> dispatch({type: 'ADD'})}/>
-            </Count>
+            <CountandButton>
+              <Count>
+                <Minus src={minus} alt='minus' onClick={() => removeItem()}/>
+                <span>{state?.itemQuantity}</span>
+                <Plus src={plus} alt='plus'  onClick={()=> dispatch({type: 'ADD'})}/>
+              </Count>
 
-            <CartButton><img src={cart} alt="cart"/>  <p>Add to cart</p></CartButton>
+              <CartButton><img src={cart} alt="cart"/>  <p>Add to cart</p></CartButton>
+            </CountandButton>
           </Counter>
         </HeroContent>
       </HeroContainer>

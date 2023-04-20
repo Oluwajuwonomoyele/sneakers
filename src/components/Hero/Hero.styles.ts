@@ -8,7 +8,8 @@ export const HeroContainer = styled.div`
     margin: 0 auto;
 
     @media screen and (min-width: 1300px) {
-        height: 90vh;
+        height: 88vh;
+        max-height: 90vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -51,12 +52,37 @@ export const Shoes = styled.div`
 `
 export const Shoe = styled.div`
     width: 100px;
-    border-radius: 5px;
+    height: 100px;
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    vertical-align: middle;
+    border: 2px solid transparent;
 
     img {
         width: 100%;
+        height: 100%;
+        
+    }
+
+    &:hover {
+        opacity: 60%
+    }
+
+    &.active {
+        border-color: ${props => props.theme.colors.primary.orange};
+    }
+    &.active::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        positiion: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: green;
+        z-index: 100
     }
 `
 
@@ -92,6 +118,14 @@ export const ContentHeader = styled.div`
     }
 `
 export const Counter = styled.div`
+`
+export const CountandButton = styled.div`
+
+    @media screen and (min-width: 1300px) {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 `
 export const Pricing = styled.div`
     display: flex;
@@ -151,14 +185,23 @@ export const Count = styled.div`
        width: 15rem;
        height: 3.5rem;
        margin-top: 0;
+       padding: 0 1rem;
        border-radius: 8px;
     }
 `
 export const Minus = styled.img`
     cursor: pointer;
+
+    &:hover {
+        opacity: 60%
+    }
 `
 export const Plus = styled.img`
     cursor: pointer;
+
+    &:hover {
+        opacity: 60%
+    }
 `
 export const CartButton = styled.button`
     width: 100%;
@@ -182,13 +225,16 @@ export const CartButton = styled.button`
         color: ${props => props.theme.colors.neutral.white};
     }
 
+    &:hover {
+        opacity: 60%
+    }
+
     @media screen and (min-width: 425px) {
         margin-top: 1rem;
     }
     @media screen and (min-width: 1300px) {
        display: inline-flex;
        width: 19rem;
-       margin-left: 1rem;
        margin-top: 0;
        padding: 0;
        height: 3.5rem;
