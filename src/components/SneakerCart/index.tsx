@@ -8,9 +8,10 @@ import { UseCartContext } from '../../hooks/UseCartContext';
 type CartProps = {
     isCartOpen: boolean
     isCartEmpty: boolean
+    setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Cart = ({isCartOpen, isCartEmpty} : CartProps) => {
+const Cart = ({isCartOpen, isCartEmpty, setIsCartOpen} : CartProps) => {
     const {state, dispatch} = UseCartContext()
 
     return ( 
@@ -34,7 +35,7 @@ const Cart = ({isCartOpen, isCartEmpty} : CartProps) => {
                             <Remove src={deleteIcon} alt='delete'/>
                         </ItemDets>
                     </Item>
-                    <CheckOut>Checkout</CheckOut>
+                    <CheckOut onClick={() => setIsCartOpen(false)}>Checkout</CheckOut>
                    </>}
                 </CartContent>
             </CartContainer>

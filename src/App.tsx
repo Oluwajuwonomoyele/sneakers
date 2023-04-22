@@ -9,7 +9,7 @@ import { useState } from 'react';
 function App() {
   const [openNav, setOpenNav] = useState(false);
   const [ isCartOpen, setIsCartOpen ] = useState(false)
-  const [isCartEmpty, setIsCartEmpty] = useState(true)
+  const [isCartEmpty, setIsCartEmpty] = useState(false)
 
   const toggleOpenNav = ():void => {
     setOpenNav(!openNav)
@@ -39,9 +39,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <MobileNav openNav={openNav} toggleOpenNav={toggleOpenNav}/>
-      <Navbar openNav={openNav} toggleOpenNav={toggleOpenNav} toggleCart={toggleCart} isCartEmpty={isCartEmpty}/>
+      <Navbar openNav={openNav} toggleOpenNav={toggleOpenNav} toggleCart={toggleCart} isCartEmpty={isCartEmpty} isCartOpen={isCartOpen}/>
       <Hero setIsCartEmpty={setIsCartEmpty} isCartEmpty={isCartEmpty}/>
-      <Cart isCartOpen={isCartOpen} isCartEmpty={isCartEmpty}/>
+      <Cart isCartOpen={isCartOpen} isCartEmpty={isCartEmpty} setIsCartOpen={setIsCartOpen}/>
     </ThemeProvider>
   );
 }

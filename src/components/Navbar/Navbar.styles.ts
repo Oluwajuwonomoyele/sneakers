@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+type NavStyles = {
+    isCartOpen: boolean
+}
+
 export const Nav = styled.nav`
     height: 70px;
     width: 100%;
@@ -75,12 +79,12 @@ export const Menu = styled.img`
 export const Logo = styled.img`
     cursor: pointer;
 `
-export const CartToast = styled.div`
+export const CartToast = styled.div<NavStyles>`
     cursor: pointer;
     position: relative;
 
     svg {
-        fill: #69707D;
+        fill: ${props => props.isCartOpen ? 'veryDarkBlue': '#69707D'};
 
         @media screen and (min-width: 1300px) {
             &:hover {
